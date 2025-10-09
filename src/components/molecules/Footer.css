@@ -1,0 +1,8 @@
+footer {
+    display: flex;
+    background-color: var(--blue-dark);
+    justify-content: right;
+    font-size: var(--font-size-s);
+    color: var(--white);
+    padding: 2rem;
+}

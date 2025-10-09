@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+p {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+:root {
+    font-family: ArchivoExpanded-Light, sans-serif;
+    text-rendering: optimizelegibility;
+
+    --black: #000000;
+    --grey-dark: #1B1B1B;
+    --blue-very-dark: #101015;
+    --blue-dark: #05191D;
+    --blue: #15616D;
+    --blue-light: #40C5DB;
+    --white: #FFFFFF;
+    --font-size-xl: 4rem;
+    --font-size-l: 1.375rem;
+    --font-size-m: 0.9rem;
+    --font-size-s: 0.75rem;
+}
+
+@font-face {
+    font-family: ArchivoExpanded-Regular;
+    src:
+            local('ArchivoExpanded-Regular'),
+            url('./fonts/ArchivoExpanded-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: ArchivoExpanded-Light;
+    src:
+            local('ArchivoExpanded-Light'),
+            url('./fonts/ArchivoExpanded-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: ArchivoExpanded-Black;
+    src:
+            local('ArchivoExpanded-Black'),
+            url('./fonts/ArchivoExpanded-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Incompleeta-Light;
+    src:
+            local('Incompleeta-Light'),
+            url('./fonts/Incompleeta-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Playfair-Medium;
+    src:
+            local('Playfair-Medium'),
+            url('./fonts/Playfair-Medium.ttf') format('truetype');
+}

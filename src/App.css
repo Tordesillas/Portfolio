@@ -1,0 +1,16 @@
+main {
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    justify-content: center;
+    background-color: var(--blue-very-dark);
+    padding-bottom: 80px;
+}
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr min(95vw, 800px) 1fr;
+    height: 100%;
+}
+.main-container > * {
+    grid-column: 2;
+}

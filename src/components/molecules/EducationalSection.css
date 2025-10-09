@@ -1,0 +1,27 @@
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+.left-column {
+    grid-column: 1;
+}
+.right-column {
+    grid-column: 2;
+
+    & > p {
+        font-size: var(--font-size-m);
+        color: var(--white);
+        white-space: pre-line;
+    }
+
+    & > p > span {
+        color: var(--blue-light);
+    }
+}
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 2rem 0;
+}

@@ -1,0 +1,148 @@
+.hero-header {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1 !important;
+}
+h1 {
+    font-size: var(--font-size-xl);
+    font-family: Incompleeta-Light, sans-serif;
+    color: transparent;
+    white-space: pre-line;
+    margin: 100px auto;
+    text-align: center;
+    background: linear-gradient(to right, var(--blue-light), var(--white));
+    background-clip: text;
+}
+.ellipse-background {
+    position: absolute;
+    top: -250px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(95vw, 700px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+            circle,
+            color-mix(in srgb, var(--blue) 20%, transparent) 0%,
+            color-mix(in srgb, var(--blue-dark) 10%, transparent) 50%,
+            transparent 100%
+    );
+    pointer-events: none;
+}
+.avatar-container {
+    display: flex;
+    flex-direction: row;
+}
+.blue-line {
+    flex: 1;
+    height: 1px;
+    background: var(--blue-light);
+    margin-top: 230px;
+    box-shadow: 0 0 10px 0 var(--blue-light);
+}
+.avatar-wrapper {
+    display: flex;
+    position: relative;
+    width: 380px;
+    height: 260px;
+    margin: 30px;
+}
+.avatar-background {
+    flex: 1;
+    background-color: color-mix(in srgb, var(--blue) 10%, transparent);
+    border-radius: 130px;
+    transform: rotate(-45deg);
+}
+.avatar-shape {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--blue-light), var(--white));
+    mask:
+            linear-gradient(white, white) content-box,
+            linear-gradient(white, white);
+    mask-composite: exclude;
+    padding: 1px;
+    border-radius: 130px;
+    transform: rotate(-45deg) translateX(10px) translateY(20px);
+    will-change: transform;
+}
+.white-line {
+    flex: 1;
+    height: 1px;
+    background: var(--white);
+    margin-top: 40px;
+    box-shadow: 0 0 10px 0 var(--white);
+}
+.contact-buttons-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding: 50px;
+}
+.contact-button {
+    display: flex;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    position: relative;
+
+    &:hover {
+        filter: brightness(160%);
+    }
+
+    &:active {
+        filter: brightness(280%);
+    }
+}
+.contact-button-background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+            circle,
+            color-mix(in srgb, var(--blue) 50%, transparent) 0%,
+            color-mix(in srgb, var(--blue) 20%, transparent) 20%,
+            transparent 70%,
+            transparent 100%
+    );
+}
+.job-impact-container {
+    position: relative;
+    padding: 100px 0;
+    margin: -40px 0;
+    overflow: hidden;
+}
+.job-impact {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: var(--blue);
+}
+.job-impact p {
+    font-size: var(--font-size-m);
+    color: var(--white);
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
+.job-impact-rotated {
+    z-index: 1;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 150%;
+    padding: 0.5rem 0;
+    border: 2px solid var(--blue);
+    transform: translateX(-50%) rotate(-6deg);
+    transform-origin: 58% 50%;
+    will-change: transform;
+}
+.job-impact-rotated p {
+    font-size: var(--font-size-m);
+    color: var(--blue);
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
