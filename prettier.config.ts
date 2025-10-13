@@ -8,5 +8,7 @@ export default {
     trailingComma: 'none',
     endOfLine: 'lf',
     bracketSpacing: true,
-    jsxSingleQuote: false
+    jsxSingleQuote: false,
+    bracketSameLine: false,
+    arrowParens: 'always'
 };

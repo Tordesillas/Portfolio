@@ -1,0 +1,60 @@
+.navigator-background {
+    position: absolute;
+    inset: 23px 59px 72px 58px;
+    overflow: hidden;
+}
+.chevron-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    padding: 40px 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+    will-change: opacity;
+    z-index: 5;
+    mix-blend-mode: exclusion;
+}
+.chevron-wrapper.mob {
+    &.prev {
+        left: 0;
+    }
+
+    &.next {
+        right: 0;
+    }
+}
+.chevron-wrapper.web {
+    &.prev {
+        left: 35px;
+    }
+
+    &.next {
+        right: 36px;
+    }
+}
+.carrousel {
+    position: relative;
+
+    &:hover .chevron-wrapper {
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+    }
+}
+.carrousel.mob {
+    height: 80dvh;
+    aspect-ratio: 293 / 581;
+}
+.image-mask {
+    position: absolute;
+    overflow: hidden;
+}
+.image-mask.mob {
+    inset: 19px 22px;
+    border-radius: 30px;
+}
+.image-mask.web {
+    inset: 65px 59px 72px 58px;
+}

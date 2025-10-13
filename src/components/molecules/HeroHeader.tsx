@@ -22,13 +22,14 @@ export default function HeroHeader(): React.ReactElement {
             </div>
 
             <div className="contact-buttons-container">
-                <a className="contact-button" href="mailto:gcasagrande2812@gmail.com">
+                <a className="contact-button" href="mailto:gcasagrande2812@gmail.com" title="Envoyer un mail">
                     <Mail />
                     <span className="contact-button-background" />
                 </a>
                 <a
                     className="contact-button"
                     href="https://www.linkedin.com/in/guillaume-casagrande/"
+                    title="Se rendre sur le profil LinkedIn"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -38,6 +39,7 @@ export default function HeroHeader(): React.ReactElement {
                 <a
                     className="contact-button"
                     href="https://github.com/Tordesillas"
+                    title="Se rendre sur le profil Github"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

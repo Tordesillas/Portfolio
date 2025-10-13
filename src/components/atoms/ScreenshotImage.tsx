@@ -26,7 +26,7 @@ export default function ScreenshotImage({ image }: Props): React.ReactElement {
         } else if (imageCache.has(image)) {
             setNextSrc(imageCache.get(image)!);
         } else if (imageImporter) {
-            imageImporter().then((module) => {
+            void imageImporter().then((module) => {
                 imageCache.set(image, module);
                 setNextSrc(module);
             });

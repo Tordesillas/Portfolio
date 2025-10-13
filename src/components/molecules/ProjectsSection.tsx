@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
-import PhoneCarrousel from '../atoms/PhoneCarrousel.tsx';
+import Carrousel from '../atoms/Carrousel.tsx';
+import ProjectCard from '../atoms/ProjectCard.tsx';
 import SectionTitle from '../atoms/SectionTitle.tsx';
 import CALogo from '../../assets/images/ca.png';
-import ComputerCarrousel from '../atoms/ComputerCarrousel.tsx';
 import CCExpertLogo from '../../assets/images/ccexpert.png';
 import CrewExpanseLogo from '../../assets/images/crewexpanse.png';
 import ExaMedLogo from '../../assets/images/examed.png';
 import LudasLogo from '../../assets/images/ludas.png';
+import { Project } from '../../models';
 import './ProjectsSection.css';
-
-interface Project {
-    name: string;
-    date: string;
-    img: string;
-    des: string;
-}
 
 export default function ProjectsSection(): React.ReactElement {
     const mobileProjects: Project[] = [
@@ -22,21 +16,36 @@ export default function ProjectsSection(): React.ReactElement {
             name: 'ExaMed',
             date: '2019-2023',
             img: ExaMedLogo,
+            imgPath: 'examed',
+            imgQuantity: 5,
             des: "Simulateur du Jumeau numérique d'un patient pour personnaliser au mieux sa prise de médicaments."
         },
         {
             name: 'CCExpert',
             date: '2017-2023',
             img: CCExpertLogo,
+            imgPath: 'ccexpert',
+            imgQuantity: 5,
+            link: 'https://play.google.com/store/apps/details?id=fr.tordesillas.ccexpert',
             des: 'Application compagnon pour les joueurs du jeu mobile Castle Clash sous Android avec plus de 35k téléchargements sur le Play Store.'
         },
         {
             name: 'CrewExpanse',
             date: '2022-2023',
             img: CrewExpanseLogo,
+            imgPath: 'crewexpanse',
+            imgQuantity: 4,
+            link: 'https://play.google.com/store/apps/details?id=fr.tordesillas.crewexpanse',
             des: 'Application compagnon du jeu de société The Crew, développée en React Native.'
         },
-        { name: '?', date: '2023-...', img: CALogo, des: '?' }
+        {
+            name: '?',
+            date: '2023-...',
+            img: CALogo,
+            imgPath: 'ca',
+            imgQuantity: 0,
+            des: '?'
+        }
     ];
 
     const webProjects: Project[] = [
@@ -44,18 +53,23 @@ export default function ProjectsSection(): React.ReactElement {
             name: 'ExaMed Pro v2',
             date: '2022-2024',
             img: ExaMedLogo,
+            imgPath: 'examedpro',
+            imgQuantity: 6,
             des: "Simulateur du Jumeau numérique d'un patient pour personnaliser au mieux sa prise de médicaments, destiné aux professionnels de santé."
         },
         {
             name: 'Ludas',
             date: '2019-2023',
             img: LudasLogo,
+            imgPath: 'ludas',
+            imgQuantity: 2,
+            link: 'https://tordesillas.github.io/Ludas/',
             des: 'Jeu vidéo reproduisant les règles du jeu de société Ludo.'
         }
     ];
 
-    const [selectedMobileProject, setSelectedMobileProject] = useState<string>('');
-    const [selectedWebProject, setSelectedWebProject] = useState<string>('');
+    const [selectedMobileProject, setSelectedMobileProject] = useState<Project | undefined>();
+    const [selectedWebProject, setSelectedWebProject] = useState<Project | undefined>();
 
     return (
         <>
@@ -63,53 +77,33 @@ export default function ProjectsSection(): React.ReactElement {
 
             <section>
                 <div className="phone-projects-container">
-                    <PhoneCarrousel project={selectedMobileProject} />
+                    <Carrousel project={selectedMobileProject} isMobile />
 
                     <div className="phone-projects">
                         {mobileProjects.map((project) => (
                             <ProjectCard
                                 key={project.name}
-                                {...project}
-                                onIconClicked={() => setSelectedMobileProject(project.name)}
+                                project={project}
+                                onIconClicked={() => setSelectedMobileProject(project)}
                             />
                         ))}
                     </div>
                 </div>
 
                 <div className="web-projects-container">
-                    <ComputerCarrousel project={selectedWebProject} />
+                    <Carrousel project={selectedWebProject} />
 
                     <div className="web-projects">
                         {webProjects.map((project) => (
                             <ProjectCard
                                 key={project.name}
-                                {...project}
-                                onIconClicked={() => setSelectedWebProject(project.name)}
+                                project={project}
+                                onIconClicked={() => setSelectedWebProject(project)}
                             />
                         ))}
                     </div>
                 </div>
             </section>
         </>
-    );
-}
-
-interface ProjectCardProps extends Project {
-    onIconClicked: () => void;
-}
-
-export function ProjectCard({ name, date, img, des, onIconClicked }: ProjectCardProps): React.ReactElement {
-    return (
-        <div className="project-card">
-            <div className="project-card-header">
-                <img src={img} alt={`${name} logo`} onClick={onIconClicked} />
-                <h3>
-                    {name}
-                    {'\n'}({date})
-                </h3>
-            </div>
-
-            <p className="project-description">{des}</p>
-        </div>
     );
 }

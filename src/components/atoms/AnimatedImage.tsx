@@ -20,7 +20,7 @@ export default function AnimatedImage({ image }: Props): React.ReactElement {
     // Load the image
     useEffect(() => {
         if (isInView && imageImporter && !imageSrc) {
-            imageImporter().then((module) => {
+            void imageImporter().then((module) => {
                 setImageSrc(module);
             });
         }

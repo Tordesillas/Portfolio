@@ -33,6 +33,15 @@
         opacity: 0.5;
     }
 }
+.blurred-background {
+    position: absolute;
+    z-index: -1;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 .header-button {
     position: relative;
     font-size: var(--font-size-m);
@@ -55,13 +64,4 @@
     &:hover .blurred-background {
         opacity: 1;
     }
-}
-.blurred-background {
-    position: absolute;
-    z-index: -1;
-    top: -4px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
