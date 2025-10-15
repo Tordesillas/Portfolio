@@ -3,7 +3,14 @@ import React from 'react';
 export default function Avatar(): React.ReactElement {
     return (
         <div
-            style={{ position: 'absolute', inset: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                overflow: 'hidden'
+            }}
         >
             <svg style={{ transform: 'scale(1.5)', pointerEvents: 'none' }} viewBox="0 0 778 778" fill="none">
                 <mask

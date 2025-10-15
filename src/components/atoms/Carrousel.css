@@ -1,6 +1,6 @@
 .navigator-background {
     position: absolute;
-    inset: 23px 59px 72px 58px;
+    inset: 4.3% 7.35% 13.8% 7.25%;
     overflow: hidden;
 }
 .chevron-wrapper {
@@ -8,53 +8,82 @@
     top: 50%;
     transform: translateY(-50%);
     display: flex;
-    align-items: center;
-    padding: 40px 14px;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.1s ease;
     will-change: opacity;
     z-index: 5;
     mix-blend-mode: exclusion;
+
+    & > svg {
+        width: 100%;
+    }
 }
 .chevron-wrapper.mob {
+    width: 14%;
+    padding: 30% 3%;
+
     &.prev {
-        left: 0;
+        left: 7.2%;
     }
 
     &.next {
-        right: 0;
+        right: 7.2%;
     }
 }
 .chevron-wrapper.web {
+    width: 5%;
+    padding: 12% 1%;
+
     &.prev {
-        left: 35px;
+        left: 7.3%;
     }
 
     &.next {
-        right: 36px;
+        right: 7.4%;
     }
+}
+.chevron-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    aspect-ratio: 0.6;
+    border-radius: 50%;
+    filter: blur(4px);
+    background: radial-gradient(
+            circle,
+            rgb(191 58 36 / 40%) 10%,
+            rgb(191 58 36 / 10%) 40%,
+            rgb(191 58 36 / 5%) 50%,
+            rgb(191 58 36 / 1%) 60%,
+            rgb(191 58 36 / 0%) 100%
+    );
+    z-index: 1;
 }
 .carrousel {
     position: relative;
 
     &:hover .chevron-wrapper {
-        opacity: 0.7;
+        opacity: 0.8;
         transition: opacity 0.3s ease;
     }
 }
 .carrousel.mob {
-    height: 80dvh;
+    height: 80vh;
     aspect-ratio: 293 / 581;
+    width: fit-content;
 }
 .image-mask {
     position: absolute;
     overflow: hidden;
 }
 .image-mask.mob {
-    inset: 19px 22px;
-    border-radius: 30px;
+    inset: 3% 7%;
+    border-radius: 12% / 6%;
 }
 .image-mask.web {
-    inset: 65px 59px 72px 58px;
+    inset: 12.3% 7.35% 13.8% 7.25%;
 }

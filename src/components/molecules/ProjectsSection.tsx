@@ -43,7 +43,7 @@ export default function ProjectsSection(): React.ReactElement {
             date: '2023-...',
             img: CALogo,
             imgPath: 'ca',
-            imgQuantity: 0,
+            imgQuantity: 2,
             des: '?'
         }
     ];

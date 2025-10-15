@@ -24,10 +24,10 @@
 }
 .header-bar.scrolled {
     top: 16px;
-    width: min(80vw, 40rem);
+    width: min(90vw, 40rem);
     border-bottom-width: 0;
     backdrop-filter: blur(10px);
-    border-radius: 26px;
+    border-radius: 4.2% / 50%;
 
     &::before {
         opacity: 0.5;
@@ -47,7 +47,7 @@
     font-size: var(--font-size-m);
     font-family: ArchivoExpanded-Regular, sans-serif;
     color: var(--white);
-    padding: 16px 10px;
+    padding: 1rem 0.6rem;
     margin: 0 10px;
     text-decoration-line: underline;
     text-decoration-color: transparent;
@@ -63,5 +63,10 @@
 
     &:hover .blurred-background {
         opacity: 1;
+    }
+
+    @media (width <= 600px) {
+        font-size: var(--font-size-m);
+        margin: 0;
     }
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ScreenshotImage from './ScreenshotImage.tsx';
-import {Computer, LeftChevron, Navigator, Phone, RightChevron} from '../icons';
+import { Computer, LeftChevron, Navigator, Phone, RightChevron } from '../icons';
 import { Project } from '../../models';
 import './Carrousel.css';
 

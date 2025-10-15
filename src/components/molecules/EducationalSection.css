@@ -19,6 +19,20 @@
         color: var(--blue-light);
     }
 }
+
+@media (width <= 500px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .left-column {
+        display: none;
+    }
+
+    .right-column {
+        grid-column: 1 / -1;
+    }
+}
 .logo-wrapper {
     display: flex;
     justify-content: center;

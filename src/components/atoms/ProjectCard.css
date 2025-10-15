@@ -13,9 +13,10 @@
         margin: 12px;
         user-select: none;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
         will-change: opacity, transform;
         transition: opacity 0.3s ease;
-        animation: breathe 4s ease-in-out infinite;
+        animation: breathe 3s ease-in-out infinite;
 
         &:hover {
             opacity: 0.7;
@@ -69,7 +70,7 @@
     }
 
     10% {
-        transform: scale(1.06);
+        transform: scale(1.07);
     }
 
     20% {
