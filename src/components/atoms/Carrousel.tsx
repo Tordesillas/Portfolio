@@ -7,9 +7,10 @@ import './Carrousel.css';
 interface Props {
     project?: Project;
     isMobile?: boolean;
+    ref?: React.Ref<HTMLDivElement>;
 }
 
-export default function Carrousel({ project, isMobile }: Props): React.ReactElement {
+export default function Carrousel({ project, isMobile, ref }: Props): React.ReactElement {
     const [imageName, setImageName] = useState('');
     const [imageCounter, setImageCounter] = useState(1);
 
@@ -38,7 +39,7 @@ export default function Carrousel({ project, isMobile }: Props): React.ReactElem
     }
 
     return (
-        <div className={`carrousel ${isMobile ? 'mob' : ''}`}>
+        <div className={`carrousel ${isMobile ? 'mob' : ''}`} ref={ref}>
             {isMobile ? (
                 <Phone />
             ) : (
@@ -54,10 +55,16 @@ export default function Carrousel({ project, isMobile }: Props): React.ReactElem
                 <ScreenshotImage image={imageName} />
             </div>
 
-            <div className={`chevron-wrapper prev ${isMobile ? 'mob' : 'web'}`} onClick={prevImage}>
+            <div
+                className={`chevron-wrapper prev ${isMobile ? 'mob' : 'web'} ${project ? '' : 'hidden'}`}
+                onClick={prevImage}
+            >
                 <LeftChevron />
             </div>
-            <div className={`chevron-wrapper next ${isMobile ? 'mob' : 'web'}`} onClick={nextImage}>
+            <div
+                className={`chevron-wrapper next ${isMobile ? 'mob' : 'web'} ${project ? '' : 'hidden'}`}
+                onClick={nextImage}
+            >
                 <RightChevron />
             </div>
         </div>

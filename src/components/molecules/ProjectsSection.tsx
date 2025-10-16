@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Carrousel from '../atoms/Carrousel.tsx';
 import ProjectCard from '../atoms/ProjectCard.tsx';
 import SectionTitle from '../atoms/SectionTitle.tsx';
@@ -44,7 +44,7 @@ export default function ProjectsSection(): React.ReactElement {
             img: CALogo,
             imgPath: 'ca',
             imgQuantity: 2,
-            des: '?'
+            des: 'En cours...'
         }
     ];
 
@@ -71,34 +71,54 @@ export default function ProjectsSection(): React.ReactElement {
     const [selectedMobileProject, setSelectedMobileProject] = useState<Project | undefined>();
     const [selectedWebProject, setSelectedWebProject] = useState<Project | undefined>();
 
+    const phoneCarrouselRef = useRef<HTMLDivElement>(null);
+    const webCarrouselRef = useRef<HTMLDivElement>(null);
+
+    const selectProject = (project: Project, isMobile?: boolean) => {
+        const carrouselRef = isMobile ? phoneCarrouselRef.current : webCarrouselRef.current;
+        if (carrouselRef) {
+            carrouselRef.classList.add('chevron-fade-in');
+
+            setTimeout(() => {
+                carrouselRef.classList.remove('chevron-fade-in');
+            }, 1400);
+        }
+
+        if (isMobile) {
+            setSelectedMobileProject(project);
+        } else {
+            setSelectedWebProject(project);
+        }
+    };
+
     return (
         <>
             <SectionTitle counter={3} text="Mes projets" />
 
             <section>
                 <div className="phone-projects-container">
-                    <Carrousel project={selectedMobileProject} isMobile />
+                    <Carrousel ref={phoneCarrouselRef} project={selectedMobileProject} isMobile />
 
                     <div className="phone-projects">
                         {mobileProjects.map((project) => (
                             <ProjectCard
                                 key={project.name}
                                 project={project}
-                                onIconClicked={() => setSelectedMobileProject(project)}
+                                onIconClicked={() => selectProject(project, true)}
                             />
                         ))}
                     </div>
                 </div>
 
                 <div className="web-projects-container">
-                    <Carrousel project={selectedWebProject} />
+                    <Carrousel ref={webCarrouselRef} project={selectedWebProject} />
 
                     <div className="web-projects">
                         {webProjects.map((project) => (
                             <ProjectCard
                                 key={project.name}
                                 project={project}
-                                onIconClicked={() => setSelectedWebProject(project)}
+                                onIconClicked={() => selectProject(project)}
                             />
                         ))}
                     </div>

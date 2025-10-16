@@ -13,17 +13,12 @@
         font-size: var(--font-size-m);
         color: var(--white);
         white-space: pre-line;
+        line-height: var(--line-height-normal);
     }
 
     & > p > span {
         color: var(--blue-light);
     }
-}
-.career-evolution {
-    margin: 3rem 0;
-    font-family: ArchivoExpanded-Black, sans-serif;
-    text-align: center;
-    line-height: calc(var(--font-size-m) * 1.5);
 }
 .web-tools {
     display: flex;

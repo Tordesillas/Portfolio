@@ -13,6 +13,7 @@
         font-size: var(--font-size-m);
         color: var(--white);
         white-space: pre-line;
+        line-height: var(--line-height-normal);
     }
 
     & > p > span {

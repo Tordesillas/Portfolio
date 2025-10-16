@@ -41,12 +41,6 @@ export default function CareerSection(): React.ReactElement {
                         App Store, AppGallery{'\n'}- consultant et support sur l’application mobile Med&Moi{'\n'}-
                         recrutement IT
                     </p>
-                    <p className="career-evolution">
-                        Stagiaire développeur mobile{'\n'}↓{'\n'}
-                        Développeur mobile{'\n'}↓{'\n'}
-                        Développeur front-end & Designer UI{'\n'}↓{'\n'}
-                        Lead développeur front-end{'\n'}
-                    </p>
                 </div>
             </section>
 

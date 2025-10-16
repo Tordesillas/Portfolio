@@ -34,6 +34,7 @@
         font-size: var(--font-size-m);
         font-family: ArchivoExpanded-Black, sans-serif;
         color: var(--white);
+        line-height: var(--line-height-tight);
         white-space: pre-line;
         display: flex;
         align-items: center;
@@ -43,6 +44,7 @@
 .project-description {
     font-size: var(--font-size-s);
     color: var(--white);
+    line-height: var(--line-height-normal);
     position: relative;
     z-index: 1;
 }
