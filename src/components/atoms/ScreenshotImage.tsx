@@ -52,16 +52,19 @@ export default function ScreenshotImage({ image }: Props): React.ReactElement {
 
     return (
         <div className="screenshot-wrapper">
-            {currentSrc && <img src={currentSrc} alt={image} loading="lazy" className="screenshot" />}
-            {nextSrc && (
-                <img
-                    src={nextSrc}
-                    alt={image}
-                    loading="lazy"
-                    className={`screenshot next ${isTransitioning ? 'fade-in' : ''}`}
-                    onLoad={handleNextImageLoad}
-                />
-            )}
+            <img
+                src={currentSrc || undefined}
+                alt={currentSrc ? image : undefined}
+                loading="lazy"
+                className="screenshot"
+            />
+            <img
+                src={nextSrc || undefined}
+                alt={nextSrc ? image : undefined}
+                loading="lazy"
+                className={`screenshot next ${isTransitioning ? 'fade-in' : ''}`}
+                onLoad={handleNextImageLoad}
+            />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimatedImage from '../atoms/AnimatedImage.tsx';
 import SectionTitle from '../atoms/SectionTitle.tsx';
-import { Polytech } from '../icons';
+import { PolytechSpotlight } from '../icons';
 import './EducationalSection.css';
 
 export default function EducationalSection(): React.ReactElement {
@@ -25,7 +25,7 @@ export default function EducationalSection(): React.ReactElement {
                         Diplôme en Sciences informatiques, spécialité “IHM” (major de la filière en dernière année).
                     </p>
                     <div className="logo-wrapper">
-                        <Polytech />
+                        <PolytechSpotlight />
                     </div>
                     <p>
                         <span>2020-...</span>

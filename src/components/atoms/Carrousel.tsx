@@ -53,6 +53,7 @@ export default function Carrousel({ project, isMobile, ref }: Props): React.Reac
 
             <div className={`image-mask ${isMobile ? 'mob' : 'web'}`}>
                 <ScreenshotImage image={imageName} />
+                <p className="screenshot-placeholder">Appuyer sur une icône pour visualiser l'application</p>
             </div>
 
             <div

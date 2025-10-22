@@ -93,7 +93,7 @@ export default function ProjectsSection(): React.ReactElement {
 
     return (
         <>
-            <SectionTitle counter={3} text="Mes projets" />
+            <SectionTitle counter={3} text="Mes réalisations" />
 
             <section>
                 <div className="phone-projects-container">
