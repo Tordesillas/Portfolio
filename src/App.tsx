@@ -1,4 +1,5 @@
 import React from 'react';
+import CallToAction from './components/molecules/CallToAction.tsx';
 import CareerSection from './components/molecules/CareerSection.tsx';
 import EducationalSection from './components/molecules/EducationalSection.tsx';
 import Footer from './components/molecules/Footer.tsx';
@@ -19,6 +20,7 @@ export default function App(): React.ReactElement {
                 <CareerSection />
                 <ProjectsSection />
                 <PartnersSection />
+                <CallToAction />
             </main>
 
             <Footer />
