@@ -57,6 +57,14 @@ h1 {
     background-color: color-mix(in srgb, var(--blue) 10%, transparent);
     border-radius: 130px;
     transform: rotate(-45deg);
+    overflow: clip;
+}
+.avatar {
+    position: absolute;
+    inset: 0;
+    transform: rotate(45deg) translate(-7%, -15%);
+    width: 80%;
+    user-select: none;
 }
 .avatar-shape {
     position: absolute;

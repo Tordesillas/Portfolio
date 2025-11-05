@@ -25,7 +25,7 @@ export default function ProjectsSection(): React.ReactElement {
             date: '2017-2023',
             img: CCExpertLogo,
             imgPath: 'ccexpert',
-            imgQuantity: 5,
+            imgQuantity: 7,
             link: 'https://play.google.com/store/apps/details?id=fr.tordesillas.ccexpert',
             des: 'Application compagnon pour les joueurs du jeu mobile Castle Clash sous Android avec plus de 35k téléchargements sur le Play Store.'
         },

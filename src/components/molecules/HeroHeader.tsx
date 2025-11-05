@@ -1,5 +1,6 @@
 import React from 'react';
-import { Avatar, Github, LinkedIn, Mail } from '../icons';
+import { Github, LinkedIn, Mail } from '../icons';
+import Me from '../../assets/images/me.png';
 import './HeroHeader.css';
 
 export default function HeroHeader(): React.ReactElement {
@@ -14,9 +15,10 @@ export default function HeroHeader(): React.ReactElement {
             <div className="avatar-container">
                 <span className="blue-line" />
                 <div className="avatar-wrapper">
-                    <span className="avatar-background" />
+                    <div className="avatar-background">
+                        <img src={Me} alt="Avatar" className="avatar" />
+                    </div>
                     <span className="avatar-shape" />
-                    <Avatar />
                 </div>
                 <span className="white-line" />
             </div>

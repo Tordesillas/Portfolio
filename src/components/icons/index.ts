@@ -1,6 +1,5 @@
 export { default as AnticipationSante } from './AnticipationSante';
 export { default as Apple } from './Apple';
-export { default as Avatar } from './Avatar';
 export { default as Biotrial } from './Biotrial';
 export { default as BlurredPolygon } from './BlurredPolygon';
 export { default as Computer } from './Computer';
