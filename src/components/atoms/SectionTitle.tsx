@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import './SectionTitle.css';
 
 interface Props {
@@ -8,9 +8,13 @@ interface Props {
 }
 
 export default function SectionTitle({ text, counter, right }: Props): React.ReactElement {
+    const gradId = useId();
+
     return (
         <div id={`section${counter}`} className="section-title">
-            <p className="title-background">{text}</p>
+            <p className="title-background" aria-hidden="true" role="presentation">
+                {text}
+            </p>
 
             <div className="main-title-wrapper">
                 <h2 style={{ textAlign: right ? 'right' : 'left', textUnderlineOffset: `${right ? 3.5 : 4.5}px` }}>
@@ -26,10 +30,11 @@ export default function SectionTitle({ text, counter, right }: Props): React.Rea
                         left: right ? undefined : 0,
                         right: right ? 0 : undefined
                     }}
+                    role="presentation"
                 >
-                    <circle cx="0" cy="100" r="100" fill="url(#radGrad)" />
+                    <circle cx="0" cy="100" r="100" fill={`url(#${gradId})`} />
                     <defs>
-                        <radialGradient id="radGrad" cx="0" cy="100" r="100" gradientUnits="userSpaceOnUse">
+                        <radialGradient id={gradId} cx="0" cy="100" r="100" gradientUnits="userSpaceOnUse">
                             <stop offset="0" stopColor="var(--blue-light)" stopOpacity="0.5" />
                             <stop offset="0.08" stopColor="var(--blue-light)" stopOpacity="0.35" />
                             <stop offset="0.3" stopColor="var(--blue-light)" stopOpacity="0.2" />

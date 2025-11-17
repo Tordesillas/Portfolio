@@ -42,7 +42,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.header-button {
+nav li {
     position: relative;
     font-size: var(--font-size-m);
     font-family: ArchivoExpanded-Regular, sans-serif;

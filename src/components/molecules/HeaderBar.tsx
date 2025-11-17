@@ -22,15 +22,19 @@ export default function HeaderBar(): React.ReactElement {
     };
 
     return (
-        <header className={`header-bar ${scrolled ? 'scrolled' : ''}`}>
-            {tabs.map((tab, index) => (
-                <div key={tab} className="header-button" onClick={() => handleClick(index)}>
-                    {tab}
-                    <div className="blurred-background">
-                        <BlurredPolygon />
-                    </div>
-                </div>
-            ))}
+        <header>
+            <nav>
+                <ul className={`header-bar ${scrolled ? 'scrolled' : ''}`}>
+                    {tabs.map((tab, index) => (
+                        <li key={tab} onClick={() => handleClick(index)} tabIndex={0} role="link">
+                            {tab}
+                            <span className="blurred-background">
+                                <BlurredPolygon />
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
         </header>
     );
 }

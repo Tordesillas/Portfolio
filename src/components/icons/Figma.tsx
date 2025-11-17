@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Figma(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="-50 0 300 300">
+        <svg width="48" height="48" viewBox="-50 0 300 300" role="img">
             <path d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50" fill="#0acf83"></path>
             <path d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50" fill="#a259ff"></path>
             <path d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50" fill="#f24e1e"></path>

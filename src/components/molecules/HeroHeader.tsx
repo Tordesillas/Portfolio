@@ -54,7 +54,7 @@ export default function HeroHeader(): React.ReactElement {
                 <div className="job-impact">
                     <p>Ingénieur en informatique, spécialisé en UX/UI - Lead front-end développeur</p>
                 </div>
-                <div className="job-impact-rotated">
+                <div className="job-impact-rotated" aria-hidden="true" role="presentation">
                     <p>Ingénieur en informatique, spécialisé en UX/UI - Lead front-end développeur</p>
                 </div>
             </div>

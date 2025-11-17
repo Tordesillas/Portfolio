@@ -5,6 +5,7 @@
 }
 * {
     margin: 0;
+    padding: 0;
 }
 body {
     -webkit-font-smoothing: antialiased;
@@ -17,6 +18,9 @@ h2,
 p {
     overflow-wrap: break-word;
     text-wrap: pretty;
+}
+ul {
+    list-style: none;
 }
 :root {
     --black: #000000;

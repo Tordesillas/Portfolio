@@ -30,7 +30,14 @@ export default function CallToAction(): React.ReactElement {
             <span className="cta-left-empty" />
             <span className="cta-blue-line" />
 
-            <svg ref={buttonRef} viewBox="0 0 352 352" className="cta-button">
+            <svg
+                ref={buttonRef}
+                viewBox="0 0 352 352"
+                className="cta-button"
+                role="button"
+                aria-label="Anime la bulle"
+                tabIndex={0}
+            >
                 <path
                     d="M351 176C351 272.65 272.65 351 176 351C64.5172 345.846 82.0172 297.846 62.5172 273.346C43.0172 248.846 1 244.346 1 176C1 79.3502 68.2994 1.00014 176 1C282.017 0.999864 351 79.3502 351 176Z"
                     fill="var(--blue-very-dark)"
@@ -39,15 +46,7 @@ export default function CallToAction(): React.ReactElement {
                     className="cta-touchable"
                     onClick={handleClick}
                 />
-                <mask
-                    id="bubble_mask"
-                    style={{ maskType: 'alpha' }}
-                    maskUnits="userSpaceOnUse"
-                    x="1"
-                    y="1"
-                    width="350"
-                    height="350"
-                >
+                <mask id="bubble_mask" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="1" y="1">
                     <path
                         d="M351 176C351 272.65 272.65 351 176 351C64.5172 345.846 82.0172 297.846 62.5172 273.346C43.0172 248.846 1 244.346 1 176C1 79.3502 68.2994 1.00014 176 1C282.017 0.999864 351 79.3502 351 176Z"
                         fill="var(--black)"

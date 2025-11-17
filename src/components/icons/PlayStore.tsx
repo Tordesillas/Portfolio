@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PlayStore(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="-29.45 0 466.9 466.9">
+        <svg width="48" height="48" viewBox="-29.45 0 466.9 466.9" role="img">
             <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" y1="112.094" x2="261.746" y2="112.094">
                 <stop offset="0" stopColor="#63be6b" />
                 <stop offset=".506" stopColor="#5bbc6a" />

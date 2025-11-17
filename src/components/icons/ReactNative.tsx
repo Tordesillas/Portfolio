@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ReactNative(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="0 0 3618.6 3618.6" preserveAspectRatio="xMinYMin meet">
+        <svg width="48" height="48" viewBox="0 0 3618.6 3618.6" preserveAspectRatio="xMinYMin meet" role="img">
             <circle cx="1806.5" cy="1807.1" r="302.6" fill="#00D8FF" />
             <g fill="none" stroke="#00D8FF" strokeWidth="145" strokeMiterlimit="10">
                 <path d="M1806.5 1191.9c406.2 0 783.6 58.3 1068.1 156.2 342.8 118 553.6 296.9 553.6 458.9 0 168.8-223.4 358.9-591.5 480.8-278.3 92.2-644.6 140.4-1030.2 140.4-395.4 0-769.7-45.2-1051.2-141.4-356.1-121.7-570.6-314.2-570.6-479.8 0-160.7 201.3-338.2 539.3-456 285.6-99.5 672.3-159.1 1082.5-159.1z" />

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HTML(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="-52.5 0 361 361" preserveAspectRatio="xMinYMin meet">
+        <svg width="48" height="48" viewBox="-52.5 0 361 361" preserveAspectRatio="xMinYMin meet" role="img">
             <path d="M255.555 70.766l-23.241 260.36-104.47 28.962-104.182-28.922L.445 70.766h255.11z" fill="#E44D26" />
             <path d="M128 337.95l84.417-23.403 19.86-222.49H128V337.95z" fill="#F16529" />
             <path

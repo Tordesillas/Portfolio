@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Biotrial(): React.ReactElement {
     return (
-        <svg viewBox="0 0 375 375">
+        <svg viewBox="0 0 375 375" role="img">
             <g fill="#199e74">
                 <path d="M 156.023438 54.089844 L 212.796875 54.089844 L 212.796875 110.863281 L 156.023438 110.863281 Z M 156.023438 54.089844" />
                 <path d="M 78.46875 54.089844 L 135.238281 54.089844 L 135.238281 110.863281 L 78.46875 110.863281 Z M 78.46875 54.089844" />

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PolytechSpotlight(): React.ReactElement {
     return (
-        <svg width="180" height="180" fill="none" viewBox="-2 -2 204 204">
+        <svg width="180" height="180" fill="none" viewBox="-2 -2 204 204" role="img">
             <circle cx="100" cy="100" r="100" stroke="#00ADEF" strokeDasharray="2 50.5" strokeWidth="2" />
             <path
                 fill="#00ADEF"

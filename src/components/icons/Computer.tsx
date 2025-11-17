@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Computer(): React.ReactElement {
     return (
-        <svg viewBox="0 0 375 244" style={{ width: '100%' }}>
+        <svg viewBox="0 0 375 244" style={{ width: '100%' }} role="presentation">
             <g filter="url(#filter0_d_51_235)">
                 <path
                     fill="#1D1D1B"
@@ -29,8 +29,6 @@ export default function Computer(): React.ReactElement {
             <defs>
                 <filter
                     id="filter0_d_51_235"
-                    width="340.046"
-                    height="229.557"
                     x="17.117"
                     y="0.354"
                     colorInterpolationFilters="sRGB"

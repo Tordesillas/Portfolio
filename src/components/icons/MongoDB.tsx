@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function MongoDB(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="0 0 32 32">
+        <svg width="48" height="48" viewBox="0 0 32 32" role="img">
             <path
                 d="M16.62,30l-.751-.249s.1-3.8-1.275-4.067c-.9-1.048.133-44.741,3.423-.149a2.712,2.712,0,0,0-1.333,1.523A14.1,14.1,0,0,0,16.62,30Z"
                 fill="#fbf9ef"

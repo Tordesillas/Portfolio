@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function StorybookLogo(): React.ReactElement {
     return (
-        <svg width="48" height="48" viewBox="0 0 32 32">
+        <svg width="48" height="48" viewBox="0 0 32 32" role="img">
             <path
                 d="M20.735,5.442l.133-3.173,2.72-.168.122,3.23a.216.216,0,0,1-.047.143.21.21,0,0,1-.3.029l-1.05-.82-1.243.934a.212.212,0,0,1-.3-.04A.206.206,0,0,1,20.735,5.442Z"
                 fill="#fff"
