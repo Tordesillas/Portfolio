@@ -92,38 +92,36 @@ export default function ProjectsSection(): React.ReactElement {
     };
 
     return (
-        <>
+        <section>
             <SectionTitle counter={3} text="Mes réalisations" />
 
-            <section>
-                <div className="phone-projects-container">
-                    <Carrousel ref={phoneCarrouselRef} project={selectedMobileProject} isMobile />
+            <div className="phone-projects-container">
+                <Carrousel ref={phoneCarrouselRef} project={selectedMobileProject} isMobile />
 
-                    <div className="phone-projects">
-                        {mobileProjects.map((project) => (
-                            <ProjectCard
-                                key={project.name}
-                                project={project}
-                                onIconClicked={() => selectProject(project, true)}
-                            />
-                        ))}
-                    </div>
+                <div className="phone-projects">
+                    {mobileProjects.map((project) => (
+                        <ProjectCard
+                            key={project.name}
+                            project={project}
+                            onIconClicked={() => selectProject(project, true)}
+                        />
+                    ))}
                 </div>
+            </div>
 
-                <div className="web-projects-container">
-                    <Carrousel ref={webCarrouselRef} project={selectedWebProject} />
+            <div className="web-projects-container">
+                <Carrousel ref={webCarrouselRef} project={selectedWebProject} />
 
-                    <div className="web-projects">
-                        {webProjects.map((project) => (
-                            <ProjectCard
-                                key={project.name}
-                                project={project}
-                                onIconClicked={() => selectProject(project)}
-                            />
-                        ))}
-                    </div>
+                <div className="web-projects">
+                    {webProjects.map((project) => (
+                        <ProjectCard
+                            key={project.name}
+                            project={project}
+                            onIconClicked={() => selectProject(project)}
+                        />
+                    ))}
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }

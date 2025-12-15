@@ -23,10 +23,10 @@ import './CareerSection.css';
 
 export default function CareerSection(): React.ReactElement {
     return (
-        <>
+        <section>
             <SectionTitle counter={2} text="Parcours professionnel" right />
 
-            <section className="content-grid">
+            <div className="content-grid">
                 <div className="left-column">
                     <AnimatedImage image="island" />
                 </div>
@@ -42,7 +42,7 @@ export default function CareerSection(): React.ReactElement {
                         recrutement IT
                     </p>
                 </div>
-            </section>
+            </div>
 
             <div className="web-tools">
                 {[
@@ -83,6 +83,6 @@ export default function CareerSection(): React.ReactElement {
                     </div>
                 ))}
             </div>
-        </>
+        </section>
     );
 }

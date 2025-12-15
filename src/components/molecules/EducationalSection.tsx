@@ -6,10 +6,10 @@ import './EducationalSection.css';
 
 export default function EducationalSection(): React.ReactElement {
     return (
-        <>
+        <section>
             <SectionTitle counter={1} text="Être formé puis former" />
 
-            <section className="content-grid">
+            <div className="content-grid">
                 <div className="left-column">
                     <AnimatedImage image="diploma" />
                 </div>
@@ -34,7 +34,7 @@ export default function EducationalSection(): React.ReactElement {
                         Sensibilisation des étudiants à la conception orientée utilisateur.
                     </p>
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }

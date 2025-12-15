@@ -64,10 +64,10 @@ export default function PartnersSection(): React.ReactElement {
     const companies = [<Sparkle />, <CHU />, <CNES />, <Vidal />, <UPSA />];
 
     return (
-        <>
+        <section>
             <SectionTitle counter={4} text="Collaborations et confiance" right />
 
-            <section className="partners-container">
+            <div className="partners-container">
                 <div className="people-container">
                     {people.map(({ name, status, img, job }, index) => (
                         <div className="people" key={index}>
@@ -91,7 +91,7 @@ export default function PartnersSection(): React.ReactElement {
                         </div>
                     ))}
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     );
 }
