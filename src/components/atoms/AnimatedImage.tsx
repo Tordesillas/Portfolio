@@ -35,7 +35,7 @@ export default function AnimatedImage({ image }: Props): React.ReactElement {
                 }
             },
             {
-                threshold: 0.7
+                threshold: 0.5
             }
         );
 

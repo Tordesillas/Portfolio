@@ -61,7 +61,7 @@ export default function ScreenshotImage({ image }: Props): React.ReactElement {
             />
             <img
                 src={nextSrc || undefined}
-                alt={image ?? undefined}
+                alt={nextSrc ? image : undefined}
                 aria-hidden="true"
                 loading="lazy"
                 className={`screenshot next ${isTransitioning ? 'fade-in' : ''}`}
