@@ -22,6 +22,25 @@ import {
 import './CareerSection.css';
 
 export default function CareerSection(): React.ReactElement {
+    const tools = [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'TypeScript',
+        'React',
+        'Redux',
+        'Vue',
+        'Figma',
+        'Storybook',
+        'Jest',
+        'Vite',
+        'React Native',
+        'Play Store',
+        'App Store',
+        'Nodejs',
+        'MongoDB'
+    ];
+
     return (
         <section>
             <SectionTitle counter={2} text="Parcours professionnel" right />
@@ -45,43 +64,45 @@ export default function CareerSection(): React.ReactElement {
             </div>
 
             <div className="web-tools">
-                {[
-                    'html',
-                    'css',
-                    'javascript',
-                    'typescript',
-                    'react',
-                    'redux',
-                    'vue',
-                    'figma',
-                    'storybook',
-                    'jest',
-                    'vite',
-                    'react-native',
-                    'play-store',
-                    'apple',
-                    'nodejs',
-                    'mongodb'
-                ].map((tool) => (
-                    <div key={tool} className={`web-tool web-tool-${tool}`}>
-                        {tool === 'apple' && <Apple />}
-                        {tool === 'css' && <CSS />}
-                        {tool === 'figma' && <Figma />}
-                        {tool === 'html' && <HTML />}
-                        {tool === 'javascript' && <JavaScript />}
-                        {tool === 'jest' && <JestLogo />}
-                        {tool === 'mongodb' && <MongoDB />}
-                        {tool === 'nodejs' && <NodeJS />}
-                        {tool === 'play-store' && <PlayStore />}
-                        {tool === 'react' && <ReactLogo />}
-                        {tool === 'react-native' && <ReactNative />}
-                        {tool === 'redux' && <ReduxLogo />}
-                        {tool === 'storybook' && <StorybookLogo />}
-                        {tool === 'typescript' && <TypeScript />}
-                        {tool === 'vite' && <ViteLogo />}
-                        {tool === 'vue' && <Vue />}
-                    </div>
-                ))}
+                {tools
+                    .map((tool) => ({
+                        tool,
+                        toolKC: tool.toLowerCase().replace(/\s+/g, '-')
+                    }))
+                    .map(({ tool, toolKC }) => (
+                        <div key={tool} className={`web-tool-${toolKC}`}>
+                            <button
+                                className="web-tool"
+                                style={{ anchorName: `--button-${toolKC}` }}
+                                aria-describedby="tooltip"
+                            >
+                                {toolKC === 'app-store' && <Apple />}
+                                {toolKC === 'css' && <CSS />}
+                                {toolKC === 'figma' && <Figma />}
+                                {toolKC === 'html' && <HTML />}
+                                {toolKC === 'javascript' && <JavaScript />}
+                                {toolKC === 'jest' && <JestLogo />}
+                                {toolKC === 'mongodb' && <MongoDB />}
+                                {toolKC === 'nodejs' && <NodeJS />}
+                                {toolKC === 'play-store' && <PlayStore />}
+                                {toolKC === 'react' && <ReactLogo />}
+                                {toolKC === 'react-native' && <ReactNative />}
+                                {toolKC === 'redux' && <ReduxLogo />}
+                                {toolKC === 'storybook' && <StorybookLogo />}
+                                {toolKC === 'typescript' && <TypeScript />}
+                                {toolKC === 'vite' && <ViteLogo />}
+                                {toolKC === 'vue' && <Vue />}
+                            </button>
+                            <div
+                                className="tool-tooltip"
+                                style={{ positionAnchor: `--button-${toolKC}` }}
+                                id="tooltip"
+                                role="tooltip"
+                            >
+                                {tool}
+                            </div>
+                        </div>
+                    ))}
             </div>
         </section>
     );

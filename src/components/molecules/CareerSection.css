@@ -60,6 +60,7 @@
     z-index: 0;
 }
 .web-tool {
+    all: unset;
     position: relative;
     display: flex;
     width: 100px;
@@ -92,7 +93,7 @@
         width: 55%;
     }
 }
-.web-tool-apple {
+.web-tool-app-store {
     --card-color: #DDDDDD;
 }
 .web-tool-css {
@@ -140,4 +141,25 @@
 .web-tool-vue {
     --card-color: #41B883;
 }
-
+.tool-tooltip {
+    position: absolute;
+    top: calc(anchor(top));
+    left: anchor(center);
+    transform: translate(-50%, -120%);
+    position-try: flip-block flip-inline;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    background: var(--card-color);
+    pointer-events: none;
+    font-size: var(--font-size-m);
+    color: var(--black);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 10;
+}
+.web-tool:hover ~ .tool-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
