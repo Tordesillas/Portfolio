@@ -24,7 +24,7 @@ export default function HeroHeader(): React.ReactElement {
             </div>
 
             <div className="contact-buttons-container">
-                <a className="contact-button" href="mailto:gcasagrande2812@gmail.com" title="Envoyer un mail">
+                <a className="contact-button" href="mailto:gcasagrande.ux@gmail.com" title="Envoyer un mail">
                     <Mail />
                     <span className="contact-button-background" />
                 </a>

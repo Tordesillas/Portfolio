@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import Carrousel from '../atoms/Carrousel.tsx';
 import ProjectCard from '../atoms/ProjectCard.tsx';
 import SectionTitle from '../atoms/SectionTitle.tsx';
-import CALogo from '../../assets/images/ca.png';
+import CasAidLogo from '../../assets/images/casaid.png';
 import CCExpertLogo from '../../assets/images/ccexpert.png';
 import CrewExpanseLogo from '../../assets/images/crewexpanse.png';
 import ExaMedLogo from '../../assets/images/examed.png';
@@ -39,12 +39,13 @@ export default function ProjectsSection(): React.ReactElement {
             des: 'Application compagnon du jeu de société The Crew, développée en React Native.'
         },
         {
-            name: '?',
-            date: '2023-...',
-            img: CALogo,
-            imgPath: 'ca',
+            name: 'CasAid',
+            date: '2024-...',
+            img: CasAidLogo,
+            imgPath: 'casaid',
             imgQuantity: 2,
-            des: 'En cours...'
+            link: 'https://casaid.fr/',
+            des: "Cahier de liaison numérique dans le domaine de l'aide à domicile."
         }
     ];
 
@@ -65,6 +66,15 @@ export default function ProjectsSection(): React.ReactElement {
             imgQuantity: 2,
             link: 'https://tordesillas.github.io/Ludas/',
             des: 'Jeu vidéo reproduisant les règles du jeu de société Ludo.'
+        },
+        {
+            name: 'CasAid',
+            date: '2024-...',
+            img: CasAidLogo,
+            imgPath: 'casaidpro',
+            imgQuantity: 2,
+            link: 'https://casaid.fr/',
+            des: "Cahier de liaison numérique dans le domaine de l'aide à domicile, destiné aux coordinateurs d'agence."
         }
     ];
 
