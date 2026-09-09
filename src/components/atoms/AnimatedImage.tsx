@@ -13,25 +13,25 @@ export default function AnimatedImage({ image }: Props): React.ReactElement {
     const [imageSrc, setImageSrc] = useState<string | null>(null);
 
     // Find the correct image importer
-    const imageImporter = Object.entries(imageImporters).find(([path]) =>
-        path.includes(`${image}.png`)
-    )?.[1] as () => Promise<string>;
+    const imageImporter = imageImporters[`${image}.png`];
 
     // Load the image
     useEffect(() => {
         if (isInView && imageImporter && !imageSrc) {
-            void imageImporter().then((module) => {
-                setImageSrc(module);
-            });
+            void imageImporter().then(setImageSrc);
         }
     }, [isInView, imageImporter, imageSrc]);
 
     // Detect area visibility
     useEffect(() => {
+        const imageElement = imageRef.current;
+        if (!imageElement) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsInView(true);
+                    observer.disconnect();
                 }
             },
             {
@@ -39,20 +39,14 @@ export default function AnimatedImage({ image }: Props): React.ReactElement {
             }
         );
 
-        if (imageRef.current) observer.observe(imageRef.current);
+        observer.observe(imageElement);
 
-        return () => {
-            if (imageRef.current) observer.unobserve(imageRef.current);
-        };
+        return () => observer.disconnect();
     }, []);
 
     return (
         <div ref={imageRef} className={`image-wrapper ${isInView && isLoaded ? 'animate' : ''}`}>
-            {imageSrc ? (
-                <img src={imageSrc} alt={image} loading="lazy" onLoad={() => setIsLoaded(true)} />
-            ) : (
-                <span className="image-placeholder" />
-            )}
+            {imageSrc && <img src={imageSrc} alt={image} loading="lazy" onLoad={() => setIsLoaded(true)} />}
         </div>
     );
 }

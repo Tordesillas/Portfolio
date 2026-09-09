@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { imageImporters } from '../../services/ImageLoader.ts';
 import './ScreenshotImage.css';
 
@@ -13,29 +13,35 @@ export default function ScreenshotImage({ image }: Props): React.ReactElement {
     const [nextSrc, setNextSrc] = useState<string | null>(null);
     const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const imageImporter = useMemo(() => {
-        if (!image) return null;
-        return Object.entries(imageImporters).find(([path]) =>
-            path.includes(`${image}.png`)
-        )?.[1] as () => Promise<string>;
-    }, [image]);
+    const imageImporter = image ? imageImporters[`${image}.png`] : null;
 
     useEffect(() => {
+        let cancelled = false;
+
         if (!image) {
             setNextSrc(null);
-        } else if (imageCache.has(image)) {
+            return;
+        }
+
+        if (imageCache.has(image)) {
             setNextSrc(imageCache.get(image)!);
         } else if (imageImporter) {
             void imageImporter().then((module) => {
                 imageCache.set(image, module);
-                setNextSrc(module);
+                if (!cancelled) {
+                    setNextSrc(module);
+                }
             });
         }
+
+        return () => {
+            cancelled = true;
+        };
     }, [image, imageImporter]);
 
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const handleNextImageLoad = () => {
+    const swapToNext = () => {
         setIsTransitioning(true);
 
         if (timeoutRef.current) {
@@ -50,22 +56,23 @@ export default function ScreenshotImage({ image }: Props): React.ReactElement {
         }, 300);
     };
 
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
     return (
         <div className="screenshot-wrapper">
-            <img
-                src={currentSrc || undefined}
-                alt={currentSrc ? image : undefined}
-                aria-label={currentSrc ? image : "Capture d'écran"}
-                loading="lazy"
-                className="screenshot"
-            />
+            <img src={currentSrc || undefined} alt={currentSrc ? image : ''} className="screenshot" />
             <img
                 src={nextSrc || undefined}
-                alt={nextSrc ? image : undefined}
+                alt=""
                 aria-hidden="true"
-                loading="lazy"
                 className={`screenshot next ${isTransitioning ? 'fade-in' : ''}`}
-                onLoad={handleNextImageLoad}
+                onLoad={swapToNext}
             />
         </div>
     );
