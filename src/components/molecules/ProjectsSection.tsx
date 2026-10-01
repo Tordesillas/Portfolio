@@ -27,7 +27,7 @@ export default function ProjectsSection(): React.ReactElement {
             imgPath: 'ccexpert',
             imgQuantity: 7,
             link: 'https://play.google.com/store/apps/details?id=fr.tordesillas.ccexpert',
-            des: 'Application compagnon pour les joueurs du jeu mobile Castle Clash sous Android avec plus de 35k téléchargements sur le Play Store.'
+            des: 'Application compagnon du jeu Castle Clash. 35k+ téléchargements sur Google Play.'
         },
         {
             name: 'CrewExpanse',
@@ -36,7 +36,7 @@ export default function ProjectsSection(): React.ReactElement {
             imgPath: 'crewexpanse',
             imgQuantity: 4,
             link: 'https://play.google.com/store/apps/details?id=fr.tordesillas.crewexpanse',
-            des: 'Application compagnon du jeu de société The Crew, développée en React Native.'
+            des: 'Application compagnon du jeu de société The Crew.'
         },
         {
             name: 'CasAid',
@@ -60,7 +60,7 @@ export default function ProjectsSection(): React.ReactElement {
         },
         {
             name: 'Ludas',
-            date: '2019-2023',
+            date: '2025',
             img: LudasLogo,
             imgPath: 'ludas',
             imgQuantity: 2,

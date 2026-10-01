@@ -45,6 +45,7 @@
     font-size: var(--font-size-s);
     color: var(--white);
     line-height: var(--line-height-normal);
+    text-wrap: balance;
     position: relative;
     z-index: 1;
 }

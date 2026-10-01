@@ -18,7 +18,26 @@ export default function HeroHeader(): React.ReactElement {
                     <div className="avatar-background">
                         <img src={Me} alt="Avatar" className="avatar" />
                     </div>
-                    <span className="avatar-shape" />
+
+                    <svg className="oblong" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="oblong-grad" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0" stopColor="var(--blue-light)" />
+                                <stop offset="1" stopColor="var(--white)" />
+                            </linearGradient>
+                        </defs>
+                        <rect
+                            x="0"
+                            y="0"
+                            width="100%"
+                            height="100%"
+                            rx="105"
+                            fill="none"
+                            stroke="url(#oblong-grad)"
+                            strokeWidth="1"
+                            vectorEffect="non-scaling-stroke"
+                        />
+                    </svg>
                 </div>
                 <span className="white-line" />
             </div>

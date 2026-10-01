@@ -22,7 +22,7 @@ export default function EducationalSection(): React.ReactElement {
                         <span>2016-2019</span>
                         {'\n'}
                         École d’ingénieur Polytech’Nice-Sophia.{'\n'}
-                        Diplôme en Sciences informatiques, spécialité “IHM” (major de la filière en dernière année).
+                        Spécialité “IHM” (major de la filière en dernière année).
                     </p>
                     <div className="logo-wrapper">
                         <PolytechSpotlight />
