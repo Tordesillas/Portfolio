@@ -14,6 +14,7 @@ import {
     ReactLogo,
     ReactNative,
     ReduxLogo,
+    Sentry,
     StorybookLogo,
     TypeScript,
     ViteLogo,
@@ -33,6 +34,7 @@ export default function CareerSection(): React.ReactElement {
         'Figma',
         'Storybook',
         'Jest',
+        'Sentry',
         'Vite',
         'React Native',
         'Play Store',
@@ -88,6 +90,7 @@ export default function CareerSection(): React.ReactElement {
                                 {toolKC === 'react' && <ReactLogo />}
                                 {toolKC === 'react-native' && <ReactNative />}
                                 {toolKC === 'redux' && <ReduxLogo />}
+                                {toolKC === 'sentry' && <Sentry />}
                                 {toolKC === 'storybook' && <StorybookLogo />}
                                 {toolKC === 'typescript' && <TypeScript />}
                                 {toolKC === 'vite' && <ViteLogo />}

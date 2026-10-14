@@ -129,6 +129,9 @@
 .web-tool-redux {
     --card-color: #764ABC;
 }
+.web-tool-sentry {
+    --card-color: #653DE9;
+}
 .web-tool-storybook {
     --card-color: #FF4785;
 }
